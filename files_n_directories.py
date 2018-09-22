@@ -1,0 +1,20 @@
+import shutil
+
+file=open("testfile.txt","w")
+print("ENTER THE NO. OF LINES TO BE ENTERED: ")
+n=input()
+print("ENTER THE CONTENT FOR FILE: ")
+for i in range(int(n)):
+	str=input()
+	file.write(str+'\n')
+file.close()
+file=open("testfile.txt","r")
+print("READING THE FILE:")
+print(file.read())
+file1=open("testfile2.txt","w")
+shutil.copyfile('testfile.txt','testfile2.txt')
+file1.close()
+file.close()
+file1=open("testfile2.txt","r")
+print("READING THE COPIED FILE:")
+print(file1.read())
